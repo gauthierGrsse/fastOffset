@@ -101,9 +101,9 @@ local function start(cmdArg)
         if entry then
             feedback(toAbsoluteOffset(entry))
             assignOffset(currentTimecode, toAbsoluteOffset(entry))
-            feedback('Changement d\'offset effectué a ' .. getOffset(currentTimecode))
+            gma.feedback('Changement d\'offset effectué a ' .. getOffset(currentTimecode))
         else
-            feedback('Changement d\'offset annulé !')
+            gma.feedback('Changement d\'offset annulé !')
         end
     else
         feedback(cmdArg)
@@ -112,13 +112,13 @@ local function start(cmdArg)
             feedback(toAbsoluteOffset(getOffset(currentTimecode)))
             feedback(toAbsoluteOffset(getOffset(currentTimecode)) - value)
             assignOffset(currentTimecode, toAbsoluteOffset(getOffset(currentTimecode)) - value)
-            feedback('Changement d\'offset effectué a ' .. getOffset(currentTimecode))
+            gma.feedback('Changement d\'offset effectué a ' .. getOffset(currentTimecode))
         else
             local value = cmdArg
             feedback(toAbsoluteOffset(getOffset(currentTimecode)))
             feedback(toAbsoluteOffset(getOffset(currentTimecode)) + value)
             assignOffset(currentTimecode, toAbsoluteOffset(getOffset(currentTimecode)) + value)
-            feedback('Changement d\'offset effectué a ' .. getOffset(currentTimecode))
+            gma.feedback('Changement d\'offset effectué a ' .. getOffset(currentTimecode))
         end
     end
 end
